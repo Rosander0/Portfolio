@@ -1,0 +1,53 @@
+:root {
+  --pcb-navy: #071A2B;
+  --copper: #EF8D32;
+  --signal-cyan: #48C9D6;
+  --solder-mask: #16706A;
+  --paper-white: #F4F8F7;
+  --ink: #112A3B;
+  --display: "Space Grotesk", sans-serif;
+  --body: "Inter", sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper-white); font-family: var(--body); font-size: 16px; line-height: 1.55; }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--signal-cyan); outline-offset: 4px; }
+.skip-link { position: fixed; left: 16px; top: -80px; z-index: 10; padding: 8px 12px; color: var(--pcb-navy); background: var(--signal-cyan); font-weight: 700; }
+.skip-link:focus { top: 16px; }
+.site-header { display: flex; justify-content: space-between; align-items: center; max-width: 1260px; margin: auto; padding: 22px 34px; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 700; }
+.brand-mark { display: grid; place-items: center; width: 35px; height: 35px; color: var(--paper-white); background: var(--pcb-navy); font-size: 12px; letter-spacing: -.05em; }
+nav { display: flex; gap: 24px; }
+nav a { color: var(--ink); font-size: 13px; font-weight: 600; text-decoration: none; }
+nav a:hover { color: var(--solder-mask); }
+.board-section { position: relative; max-width: 1260px; margin: auto; padding: 100px 34px; overflow: hidden; }
+.hero { min-height: 610px; padding-top: 82px; background-image: radial-gradient(circle at 84% 26%, rgba(72,201,214,.18) 0 3px, transparent 4px), linear-gradient(90deg, rgba(17,42,59,.05) 1px, transparent 1px), linear-gradient(rgba(17,42,59,.05) 1px, transparent 1px); background-size: auto, 30px 30px, 30px 30px; }
+.eyebrow, .pin-label, .meta-label { margin: 0; color: var(--solder-mask); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.status-dot { display: inline-block; width: 8px; height: 8px; margin-right: 5px; border-radius: 50%; background: var(--signal-cyan); box-shadow: 0 0 0 3px rgba(72,201,214,.18); }
+.hero-grid { display: grid; grid-template-columns: 1fr 310px; align-items: end; gap: 60px; margin-top: 66px; }
+h1, h2, h3 { margin: 0; font-family: var(--display); line-height: .98; }
+h1 { color: var(--pcb-navy); font-size: clamp(54px, 8.2vw, 118px); letter-spacing: -.075em; }
+h1 em { color: var(--copper); font-style: normal; }
+.pin-label { margin-bottom: 16px; color: var(--copper); }
+.component { position: relative; border: 2px solid var(--pcb-navy); background: var(--paper-white); box-shadow: 10px 10px 0 var(--signal-cyan); }
+.hero-card { padding: 28px; }
+.hero-card p:not(.meta-label) { margin: 10px 0 0; font-family: var(--display); font-size: 21px; line-height: 1.25; font-weight: 600; }
+.card-code { display: block; margin-top: 30px; color: var(--solder-mask); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+.component-corner { position: absolute; width: 11px; height: 11px; border-radius: 50%; background: var(--copper); }
+.corner-a { left: 9px; top: 9px; }.corner-b { right: 9px; bottom: 9px; }
+.scroll-cue { display: inline-block; margin-top: 70px; color: var(--pcb-navy); font-size: 13px; font-weight: 700; text-decoration: none; }.scroll-cue span { color: var(--copper); font-size: 21px; vertical-align: -2px; }
+.route { position: absolute; border: solid var(--copper); pointer-events: none; }.route-hero { width: 155px; height: 225px; right: -5px; top: 0; border-width: 0 0 4px 4px; border-radius: 0 0 0 40px; }.route-hero::after, .route-detail::after { content: ""; position: absolute; width: 14px; height: 14px; border-radius: 50%; background: var(--copper); }
+.route-hero::after { left: -9px; bottom: -9px; }
+.projects { color: var(--paper-white); background: var(--pcb-navy); max-width: none; padding-left: max(34px, calc((100vw - 1192px) / 2)); padding-right: max(34px, calc((100vw - 1192px) / 2)); }
+.section-heading { max-width: 510px; }.projects .eyebrow { color: var(--signal-cyan); }.section-heading h2, .about-block h2, .footer h2 { margin-top: 12px; font-size: clamp(36px, 5vw, 64px); letter-spacing: -.06em; }.section-heading > p:last-child { color: #b9d1d7; }
+.chip { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; max-width: 980px; margin: 55px auto 0; padding: 18px; border: 2px solid var(--copper); background: var(--copper); box-shadow: 14px 14px 0 var(--solder-mask); }
+.chip-core { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: end; min-height: 120px; padding: 20px; color: var(--pcb-navy); background: var(--copper); font-family: var(--display); font-size: 36px; font-weight: 700; line-height: .86; }.chip-core small { font-family: var(--body); font-size: 10px; letter-spacing: .13em; }
+.project-port { display: grid; grid-template-columns: 40px 1fr; gap: 12px; position: relative; min-height: 205px; padding: 25px 24px 28px; color: var(--ink); background: var(--paper-white); }.port-number { color: var(--copper); font-family: var(--display); font-size: 24px; font-weight: 700; }.project-port h3 { margin-top: 3px; font-size: 26px; letter-spacing: -.045em; }.project-port p { margin: 10px 0 18px; font-size: 13px; line-height: 1.45; }.project-port a { color: var(--solder-mask); font-size: 11px; font-weight: 700; overflow-wrap: anywhere; }.active-tag { position: absolute; right: 14px; top: 13px; padding: 3px 6px; color: var(--pcb-navy); background: var(--signal-cyan); font-size: 9px; font-weight: 700; letter-spacing: .1em; }
+.details { padding-top: 130px; }.about-block { max-width: 790px; padding: 44px; }.about-block h2 { color: var(--pcb-navy); max-width: 570px; }.lead { max-width: 650px; margin: 24px 0 0; font-size: 18px; }.data-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 22px; margin-top: 75px; }.data-block { padding-top: 20px; border-top: 3px solid var(--copper); }.data-block h3 { margin-top: 15px; font-size: 24px; letter-spacing: -.04em; }.data-block p:not(.eyebrow) { max-width: 470px; }.route-detail { width: 110px; height: 315px; right: 4%; top: 52px; border-width: 4px 4px 0 0; border-radius: 0 35px 0 0; }.route-detail::after { right: -9px; top: -9px; }
+.footer { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; padding: 85px max(34px, calc((100vw - 1192px) / 2)); color: var(--paper-white); background: var(--solder-mask); }.footer .eyebrow { color: var(--signal-cyan); }.footer h2 { max-width: 470px; }.contact-links { display: grid; align-content: start; gap: 18px; }.contact-links a { display: grid; gap: 3px; color: var(--paper-white); font-family: var(--display); font-size: 20px; text-decoration-color: var(--signal-cyan); text-underline-offset: 5px; }.contact-links span, .footer-code { color: var(--signal-cyan); font-family: var(--body); font-size: 10px; font-weight: 700; letter-spacing: .13em; }.footer-code { grid-column: 1 / -1; margin: 20px 0 0; }
+.linkedin-link { display: inline-block; margin-top: 24px; color: var(--solder-mask); font-size: 13px; font-weight: 700; text-decoration-color: var(--copper); text-decoration-thickness: 2px; text-underline-offset: 5px; }.linkedin-link span { color: var(--copper); font-size: 16px; }.skill-groups { display: grid; gap: 13px; margin-top: 18px; }.skill-groups div { display: grid; grid-template-columns: 110px 1fr; gap: 12px; padding-bottom: 11px; border-bottom: 1px solid rgba(17,42,59,.17); }.skill-groups div:last-child { border-bottom: 0; }.skill-groups span { color: var(--solder-mask); font-size: 10px; font-weight: 700; letter-spacing: .1em; }.skill-groups p { margin: 0; font-size: 13px; line-height: 1.45; }
+body:not(.ready) main, body:not(.ready) .footer { opacity: 0; transform: translateY(12px); } main, .footer { transition: opacity .55s ease, transform .55s ease; }
+@media (max-width: 700px) { .site-header { padding: 18px 20px; } nav { gap: 14px; }.board-section { padding: 68px 20px; }.hero { min-height: 560px; padding-top: 65px; }.hero-grid { grid-template-columns: 1fr; gap: 40px; margin-top: 48px; }.hero-card { max-width: 300px; }.scroll-cue { margin-top: 46px; }.projects { padding-left: 20px; padding-right: 20px; }.chip { grid-template-columns: 1fr; padding: 10px; box-shadow: 8px 8px 0 var(--solder-mask); }.chip-core { min-height: 95px; font-size: 28px; }.project-port { min-height: 180px; }.details { padding-top: 80px; }.about-block { padding: 28px; box-shadow: 7px 7px 0 var(--signal-cyan); }.data-grid, .footer { grid-template-columns: 1fr; gap: 40px; }.footer { padding: 60px 20px; }.footer-code { grid-column: auto; }.route-detail { opacity: .45; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
